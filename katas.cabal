@@ -1,0 +1,47 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 7b9cacc998b09c42417a36d4c9d3578da207dc3cd2813e7868f6e13c4d0683ff
+
+name:                katas
+version:             0.1.0.0
+homepage:            https://github.com/adomokos/hashmir#readme
+license-file:        LICENSE
+author:              Attila Domokos <adomokos@gmail.com>
+maintainer:          adomokos@gmail.com
+copyright:           2018 Attila Domokos
+license:             BSD3
+category:            Console App
+build-type:          Simple
+
+executable katas-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app/
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+  other-modules:
+      Paths_katas
+  default-language: Haskell2010
+
+test-suite katas-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test/
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , hspec ==2.*
+    , mtl
+  other-modules:
+      Ex01_ListsExtractingSpec
+      Ex02_ListsComprehensionsSpec
+      Paths_katas
+  default-language: Haskell2010
